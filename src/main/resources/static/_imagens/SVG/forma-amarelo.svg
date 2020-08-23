@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="123.782" height="60.125" viewBox="0 0 123.782 60.125">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #d2dd27;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="forma-amarelo" class="cls-1" d="M251.125,122.524h37.517l20.464-34.107,7.958,12.506-27.285,46.612H234.072l-39.791-51.16,4.548-5.684,28.422,31.833h23.874Z" transform="translate(-193.781 -87.906)"/>
+</svg>

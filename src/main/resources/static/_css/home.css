@@ -1,0 +1,372 @@
+
+
+/*----------------------------------------------
+  ------- CONFIGURAÇÕES SVG- ANIMAÇÃO  ---------
+  ----------------------------------------------*/
+
+#animacao{
+	width: 100%;
+	height: 310px;
+ }
+
+.conteiner-svg{
+ 	position: absolute;
+ 	width: 605px;
+ 	height: 220px;
+ 	top:73px;
+	left:50%;
+	transform: translateX(-50%);
+ }
+
+.parte-hf{
+    position: absolute;
+	width: 87px;
+	top:34%;
+	left:43%;
+	transform: translateX(-50%);
+ }
+#forma-hf{
+	opacity: 100;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: csvg5 7s ease-in-out forwards infinite;
+ }
+@keyframes csvg5{
+	0%{
+		fill: none; 
+		stroke-dashoffset: 1000;
+	 }
+	30%{
+		fill: rgba(0,0,0,0);
+	 }
+	80%{
+		stroke-dashoffset: 0;
+		fill: rgba(0,0,0,1);
+	 }
+	100%{
+		stroke-dashoffset: 0;
+		fill: rgba(0,0,0,1);
+	 }
+ }
+
+.parte-ciano{
+    position: absolute;
+	width: 145px;
+	top:13%;
+	left:55%;
+	transform: translateX(-50%);
+ }
+#forma-ciano{
+	opacity: 100;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: csvg4 7s ease-in-out forwards infinite;
+ }
+@keyframes csvg4{
+	0%{
+		fill: none; 
+		stroke-dashoffset: 1000;
+	 }
+	30%{
+		fill: rgba(8,159,216,0);
+	 }
+	80%{
+		stroke-dashoffset: 0;
+		fill: rgba(8,159,216,1);
+	 }
+	100%{
+		stroke-dashoffset: 0;
+		fill: rgba(8,159,216,1);
+	 }
+ }
+
+.parte-yellow{
+    position: absolute;
+	width: 130px;
+	top:50%;
+	left:43%;
+	transform: translateX(-50%);
+ }
+#forma-amarelo{
+	opacity: 100;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: csvg3 7s ease-in-out forwards infinite;
+ }
+@keyframes csvg3{
+	0%{
+		fill: none; 
+		stroke-dashoffset: 1000;
+	 }
+	30%{
+		fill: rgba(210,221,39,0);
+	 }
+	80%{
+		stroke-dashoffset: 0;
+		fill: rgba(210,221,39,1);
+	 }
+	100%{
+		stroke-dashoffset: 0;
+		fill: rgba(210,221,39,1);
+	 }
+ }
+
+.parte-magenta{
+	position:absolute;
+	width: 123px;
+	top:28%;
+	left:50%;
+	transform: translateX(-50%);
+ }
+#forma-magenta{
+	opacity: 100;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: csvg2 7s ease-in-out forwards infinite;
+ }
+@keyframes csvg2{
+	0%{
+		fill: none; 
+		stroke-dashoffset: 1000;
+	 }
+	30%{
+		fill: rgba(230,14,139,0);
+	 }
+	80%{
+		stroke-dashoffset: 0;
+		fill: rgba(230,14,139,1);
+	 }
+	100%{
+		stroke-dashoffset: 0;
+		fill: rgba(230,14,139,1);
+	 }
+ }
+
+.parte-hf-texto{
+	position: absolute;
+	width: 300px;
+	top:90%;
+	left:50%;
+	transform: translateX(-50%);
+ }
+#HF_-_SOLUÇÕES_PARA_IMPRESSÃO_{
+	opacity: 100;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: csvg1 7s ease-in-out forwards infinite;
+ }
+@keyframes csvg1{
+	0%{
+		fill: rgba(0,0,0,0); 
+		stroke-dashoffset: 1000;
+	 }
+	30%{
+		fill: rgba(0,0,0,0);
+		stroke-dashoffset: 1000;
+	 }
+	80%{
+		stroke-dashoffset: 1000;
+		fill: rgba(0,0,0,1);
+	 }
+	100%{
+		stroke-dashoffset: 1000;
+		fill: rgba(0,0,0,1);
+	 }
+ }
+
+
+/*---------------------------------------
+  ------- CONFIGURAÇÕES CARDS -----------
+  --------------------------------------*/
+
+.cards{
+ 	display: flex;
+	justify-content: center;
+	align-items: center;
+ }
+
+.container{
+ 	position: relative;
+ 	width: 800px;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	flex-wrap: wrap;
+ 	margin:0px 20px 97px 20px; 
+ }
+
+.container .card{
+ 	position: relative;
+ 	height: 150px;
+ 	background:#dde0eb;
+ 	width: 24.7%;
+ 	margin: 5px 0;
+ 	border-radius: 35px 0px 35px 0px;
+ }
+
+.container .card .imgBx{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #363637;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+ }
+
+.container .card:hover .imgBx{
+	width: 90px;
+	height: 90px;
+	left: -10px;
+	top: calc(50% - 50px);
+	transition: 0.5s ease-in-out;
+	background: linear-gradient(to bottom,#0082e6,#2b5e85);
+ }
+
+.container .card .imgBx:before{
+	content: attr(data-text);
+	position: absolute;
+	bottom: 3px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.4em;
+	color: rgba(255,255,255,.05);
+	
+ }
+
+.container .card .imgBx img{
+	max-width: 100px;
+	transition: 0.5s ease-in-out;
+ }
+
+.container .card:hover .imgBx img{
+	max-width: 70px;
+ }
+
+.container .card .content{
+	position: absolute;
+	right: 0;
+	width: calc(100% - 70px);
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+ } 
+
+.container .card .content h3{
+	margin-bottom: 5px;
+	font-size: 14px;
+	text-align: center;
+	color:#363637;
+ }
+
+.container .card .content p{
+	font-size: 10px;
+	text-align: center;
+ }
+
+.container .card .content a{
+	display: inline-block;
+	text-decoration: none;
+	font-size: 12px;
+	color:#b9babd;
+ }
+
+.container .card .content a:hover{
+	color:#0082e6;
+ }
+
+.container .card:hover .imgBx:before{
+		color: rgba(255,255,255,0);
+     }
+
+.container .card .content a.btn-primary{
+	background:#0082e6;
+	color:#ffffff;
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 8px 12px 8px 12px;
+	border-radius: 4px 4px 4px 4px;
+	margin: 15px 0px 0px 0px;
+	transition: .6s ease-in-out;
+ }
+
+.container .card .content a:hover.btn-primary{
+ 	background:#10ca1d;
+ }
+
+/*------------------------------------------------
+  ------- CONFIGURAÇÕES CARDS - RESPONSIVO -------
+  ------------------------------------------------*/
+
+@media (max-width: 900px){
+	.container .card{
+ 		width: 32.3%;
+ 	 }
+
+ 	.container .card:hover .imgBx:before{
+		color: rgba(255,255,255,0);
+     }
+ }
+
+@media (max-width: 700px){
+	.container .card{
+ 		width: 49%;
+ 		height: 160px;
+ 	 }
+
+ 	.container .card:hover .imgBx:before{
+		color: rgba(255,255,255,0);
+     }
+ }
+
+@media (max-width: 550px){
+	.container .card{
+ 		width: 80%;
+ 		height: 160px;
+ 		margin: 10px auto;
+ 	 }
+
+ 	.container .card:hover .imgBx:before{
+		color: rgba(255,255,255,0);
+     }
+ }
+
+@media (max-width: 470px){
+	.container .card{
+		max-width: 300px;
+		height: 240px;
+	 }
+
+	.container .card .imgBx{
+		position: relative;
+	 }
+
+	.container .card .imgBx,.container .card:hover .imgBx{
+		width: 100%;
+		height: auto;
+		top:0;
+		left: 0;
+		bottom: 10px;
+	 }
+
+	.container .card .imgBx img,.container .card:hover .imgBx img{
+		max-width: 100px;
+	 }
+
+	.container .card .content{
+		position: relative;
+		width: 100%;
+		height: auto;
+	 }
+
+	.container .card .imgBx:before{
+		color: rgba(255,255,255,0);
+     }
+ }

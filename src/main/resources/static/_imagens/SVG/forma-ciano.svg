@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143.093" height="151.094" viewBox="0 0 143.093 151.094">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #089fd8;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="forma-ciano" class="cls-1" d="M293.19,28.163h39.791L377.319,103.2l-30.7,54.57h20.464l43.2-76.171L365.95,7.7h-86.4L268.178,28.163H293.19Z" transform="translate(-267.688 -7.188)"/>
+</svg>

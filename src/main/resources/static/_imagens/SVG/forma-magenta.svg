@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120.375" height="129.437" viewBox="0 0 120.375 129.437">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e60e8b;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="forma-magenta" class="cls-1" d="M277.274,172.546h48.885l36.38-64.8-36.38-63.665H305.7l27.286,47.749L296.6,156.63H243.167l7.958,15.916h26.149Z" transform="translate(-242.656 -43.594)"/>
+</svg>

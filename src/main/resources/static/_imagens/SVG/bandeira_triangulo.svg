@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9.469" viewBox="0 0 9 9.469">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2b5e85;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="bandeira_triangulo" class="cls-1" d="M85.6,223.179h4.051v-9.452l-9,9.452H85.6Z" transform="translate(-80.656 -213.719)"/>
+</svg>

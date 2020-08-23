@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="86.25" height="46.5" viewBox="0 0 86.25 46.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="forma-hf" class="cls-1" d="M273.863,104.334V88.417h29.559V78.185H273.863V70.227h29.559V58.859h-32.97a9.716,9.716,0,0,0-3.41,2.274,5.856,5.856,0,0,0-1.137,3.411v39.791h7.958Zm-46.612,0V86.144h22.737v18.191h9.1V58.859h-9.1V75.912H227.251V58.859h-9.095v45.476h9.095Z" transform="translate(-217.656 -58.344)"/>
+</svg>

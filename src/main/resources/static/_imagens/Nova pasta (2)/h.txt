@@ -1,0 +1,19 @@
+<div class="teste">
+				
+				<svg class="faixas" xmlns="http://www.w3.org/2000/svg" width="169" height="557" viewBox="0 0 169 594">
+				  <defs>
+				  	<linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+							<stop offset="0%" style="stop-color:rgba(0,0,0,0.5)"/>
+							<stop offset="70%" style="stop-color:rgba(255,255,255,0.2)"/>
+						</linearGradient>
+				    <style>
+				      .cls-8 {
+				        fill: url(#g2);
+				        fill-rule: evenodd;
+				      }
+				    </style>
+				  </defs>
+				  <path id="faixas" class="cls-8" d="M30,174H165V768H20V174H30ZM8,717v51h6V174H8V717Zm163,0v51h6V174h-6V717Z" transform="translate(-8 -174)"/>
+				</svg>
+
+			</div>
