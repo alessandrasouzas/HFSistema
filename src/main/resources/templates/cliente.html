@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Sistema HF - Soluções</title>
+		<link rel="shortcut icon" href="../_imagens/logo-aba.png">
+		<meta name="vieport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="../_css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../_css/home.css"/>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<script type="text/javascript">
+			function relogio(){
+				var data = new Date();
+				var hora = data.getHours();
+				var minuto = data.getMinutes();
+				var segundo = data.getSeconds();
+
+				if(hora<10){
+					hora = "0"+hora;
+				}
+
+				if(minuto<10){
+					minuto = "0"+minuto;
+				}
+
+				if(segundo<10){
+					segundo = "0"+segundo;
+				}
+
+				document.getElementById('relogio-digital').innerHTML=hora+":"+minuto+":"+segundo;
+			}
+			window.setInterval("relogio()",1000);
+		</script>
+	</head>
+	<body onload="relogio();">
+		<header>
+			<nav>
+				<input type="checkbox" id="check">
+				<label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+				<div id="relogio-digital"></div>
+				<img class="logo" src="../_imagens/logo.png">
+				<img class="logout" src="../_imagens/logout.png">
+				<input type="search" name="busca" id="busca" class="busca" placeholder="Buscar">
+
+				<ul class="navegacao">
+					<li><a href="/home">Home</a></li>
+					<li><a href="/cliente" class="active">Clientes</a></li>
+					<li><a href="/produto">Produtos</a></li>
+					<li><a href="cad_impressoras.html">Impressoras</a></li>
+					<li><a href="agenda.html">Agenda</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="svg_background">
+				<div class="container_svg_background">
+
+					<section class="faixa_vertical">
+						<svg  width="64.094" height="429.688" viewBox="0 0 64.094 429.688">
+						  <defs>
+						    <linearGradient id="bg1" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop offset="0%" style="stop-color:rgba(0,0,0,0.5)"/>
+									<stop offset="70%" style="stop-color:rgba(255,255,255,0)"/>
+								</linearGradient>
+						    <style>
+						      .cls-8 {
+						        fill: url(#bg1);
+						        fill-rule: evenodd;
+						      }
+						    </style>
+						  </defs>
+						  <path id="faixa_vertical" class="cls-8" d="M108,170.667h3.083V600.333H108V170.667Zm61,0h3.083V600.333H169V170.667Zm-55,0h52.157V600.333H114V170.667Z" transform="translate(-108 -170.656)"/>
+						</svg>
+					</section>
+
+					<section class="faixa_horizontal">
+						<svg width="780" height="3.281" viewBox="0 0 780 3.281">
+						  <defs>
+						    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="70%" style="stop-color:#363637"/>
+									<stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+								</linearGradient>
+						    <style>
+						      .cls-9 {
+						        fill: url(#bg2);
+						        fill-rule: evenodd;
+						      }
+						    </style>
+						  </defs>
+						  <path id="faixa_horizontal" class="cls-9" d="M43.667,223.179H35.51v3.3H495.172v-3.3H43.667Z" transform="translate(-35.5 -223.188)"/>
+						</svg>
+					</section>
+
+					<section class="bandeira_triangulo">
+						<svg width="9" height="9.469" viewBox="0 0 9 9.469">
+						  <defs>
+						    <style>
+						      .cls-10 {
+						        fill: #2b5e85;
+						        fill-rule: evenodd;
+						      }
+						    </style>
+						  </defs>
+						  <path id="bandeira_triangulo" class="cls-10" d="M85.6,223.179h4.051v-9.452l-9,9.452H85.6Z" transform="translate(-80.656 -213.719)"/>
+						</svg>
+					</section>
+
+					<section class="bandeira">
+						<svg width="98.125" height="146.75" viewBox="0 0 98.125 146.75">
+						  <defs>
+						    <linearGradient id="bg3" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop offset="0%" style="stop-color:#0082e6"/>
+									<stop offset="70%" style="stop-color:#2b5e85"/>
+								</linearGradient>
+						    <style>
+						      .cls-11 {
+						        fill: url(#bg3);
+						        fill-rule: evenodd;
+						      }
+						    </style>
+						  </defs>
+						  <path id="bandeira" class="cls-11" d="M89.654,222.728v-9h98.117V326.7l-44.108,31.955a11.286,11.286,0,0,1-4.5,1.8,10.978,10.978,0,0,1-4.951-.9L89.654,327.146V222.728Z" transform="translate(-89.656 -213.719)"/>
+						</svg>
+					</section>
+
+					<section class="bandeira_imagem">
+						<img src="../_imagens/SVG/clientes.svg">
+					</section>
+
+				</div>
+			</div>
+
+			<div class="container_form_clientes">
+				<div class="div_form_clientes">
+					<form class="form_clientes">
+						<div class="form_clientes_buscar">
+			    			<input type="search" name="busca" id="busca" class="input_busca" placeholder="Buscar">
+			    			<img class="svg_busca" src="../_imagens/SVG/b.svg">
+			    			<table class="table_busca">
+								<tr><td class="table_busca_titulo">Empresa</td></tr>
+								<tr><td class="table_busca_celulas">.<td></tr>
+								<tr><td class="table_busca_celulas">.<td></tr>
+								<tr><td class="table_busca_celulas">.<td></tr>
+								<tr><td class="table_busca_celulas">.<td></tr>
+							</table>
+						</div>
+						<img class="svg_empresa" src="../_imagens/SVG/empresa.svg">
+
+						<fieldset class="fieldset_empresa"><legend class="legenda_form_cliente">Empresa</legend>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="cliente" type="text" required>
+					          <label class="label_form_cliente">Cliente</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="cnpj" type="text" required>
+					          <label class="label_form_cliente">Cnpj</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="logradouro" type="text" required>
+					          <label class="label_form_cliente">Logradouro</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="numero" type="text" required>
+					          <label class="label_form_cliente">Numero</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="complemento" type="text" required>
+					          <label class="label_form_cliente">Complemento</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="bairro" type="text" required>
+					          <label class="label_form_cliente">Bairro</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="cep" type="text" required>
+					          <label class="label_form_cliente">Cep</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="cidade" type="text" required> 
+					          <label class="label_form_cliente">Cidade</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          	<select name="tUf" id="uf">
+			                    	<option>AC</option>
+			                        <option>AP</option>
+			                        <option>AM</option>
+			                        <option>PA</option>
+			                        <option>RO</option>
+			                        <option>RR</option>
+			                        <option>TO</option>
+			                        <option>AL</option>
+								    <option>BA</option>
+								    <option>CE</option>
+								    <option>MA</option>
+								    <option>PB</option>
+								    <option>PE</option>
+								    <option>PI</option>
+								    <option>RN</option>
+								    <option>SE</option>
+								    <option>DF</option>
+								    <option>GO</option>
+								    <option>MT</option>
+								    <option>MS</option>
+								    <option>ES</option>
+								    <option>MG</option>
+								    <option>RJ</option>
+								    <option selected>SP</option>
+								    <option>PR</option>
+								    <option>RS</option>
+								    <option>SC</option>
+								</select>
+					        	<label id="label_uf">Uf</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="telefone" type="text" required>
+					          <label class="label_form_cliente">Telefone</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          	<select name="tPg" id="pagamento">
+								    <option>Dinheiro</option>
+								    <option>Boleto 07</option>
+								    <option selected>Boleto 14</option>
+								    <option>Boleto 21</option>
+				                    <option>Boleto 21/42</option>
+								</select>
+					          	<label id="label_pagamento">Pagamento</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <textarea name="tObs" id="observacao" cols="50" rows="3"></textarea>
+					          <label id="label_observacao">Observação</label>
+					        </div>
+
+				        </fieldset>
+
+				        <fieldset class="fieldset_contato"><legend class="legenda_form_cliente">Contato</legend>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="nome" type="text" required>
+					          <label class="label_nome label_form_cliente">Nome</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="tel" type="text" required>
+					          <label class="label_form_cliente">Telefone</label>
+					        </div>
+
+					        <div class="grupo_input_label">      
+					          <input class="input_form_cliente" id="email" type="text" required>
+					          <label class="label_form_cliente">E-mail</label>
+					        </div>
+
+				        </fieldset>
+
+				        <svg class="seta esquerda"x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;">
+							<g>
+								<g>
+									<path d="M27,1L27,1c14.359,0,26,11.641,26,26v0c0,14.359-11.641,26-26,26h0C12.641,53,1,41.359,1,27v0 C1,12.641,12.641,1,27,1z"/>
+								</g>
+								<path style="fill:#FFFFFF;" d="																	M31.706,40c-0.256,0-0.512-0.098-0.707-0.293L19.501,28.209c-0.667-0.667-0.667-1.751,0-2.418
+									l11.498-11.498c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L21.12,27l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414
+									C32.218,39.902,31.962,40,31.706,40z"/>
+							</g>
+						</svg>
+
+						<svg class="seta direita"x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;">
+							<g>
+								<g>
+									<path d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0
+									C53,41.359,41.359,53,27,53z"/>
+								</g>
+								<path style="fill:#FFFFFF;" d="																	M22.294,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L32.88,27
+									L21.587,15.707c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418 L23.001,39.707C22.806,39.902,22.55,40,22.294,40z"/>
+							</g>
+						</svg>
+
+						<div class="gropo_botoes">
+					        <button type="button" class="botao fundo_vermelho">Excluir</button>
+					        <button type="button" class="botao fundo_vermelho">Alterar</button>
+					        <button type="button" class="botao fundo_azul">Caregar</button>
+					        <button type="button" class="botao fundo_azul">Adicionar</button>
+					    </div>
+
+					</form>
+				</div>
+			</div>
+
+		</main>
+	</body>
+</html>

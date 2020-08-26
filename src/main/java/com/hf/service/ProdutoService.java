@@ -3,6 +3,7 @@ package com.hf.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -13,16 +14,10 @@ import  com.hf.repository.ProdutoRepository;
 @Service
 public class ProdutoService {
 
-	
+	@Autowired
 	private ProdutoRepository repository;
 		
-	
-	public ProdutoService(ProdutoRepository repository) {
-		super();
-		this.repository = repository;
-	}
 
-	
 	public Optional<Produto> buscarProduto(Integer id) {
 		return repository.findById(id);
 	}
