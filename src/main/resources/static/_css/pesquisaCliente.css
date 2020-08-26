@@ -1,7 +1,7 @@
-@charset "UTF-8";
+
 
 /*---------------------------------------
-  ------- CONFIGURAÃ‡Ã•ES TABELA ----------
+  ------- CONFIGURAÇÕES TABELA ----------
   ---------------------------------------*/
   
  .fieldset_conf {
@@ -26,4 +26,8 @@
 
 a:hover {
     text-decoration: none;
+}
+
+.lapis:hover{
+	background-color:black;
 }
