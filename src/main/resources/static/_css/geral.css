@@ -166,7 +166,7 @@ label {
   ------- CONFIGURAÇÕES ALERT ---------
   ---------------------------------------*/
   
-  .alert-primary {
+.alert-primary {
     color: #1471b8;
     background-color: #1570b512;
     border-color: #176eb133;

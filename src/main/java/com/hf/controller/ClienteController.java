@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,8 +24,6 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 	
-//	@Autowired
-//	private Cliente cliente;
 
 	// Retorna a home view cliente
 	@GetMapping()
@@ -35,12 +34,20 @@ public class ClienteController {
 		return mv;
 	}
 
+//	@GetMapping("/{nome}")
+//	public ModelAndView pesquisar(@PathVariable ("nome") String nome) {
+//		List<Cliente> clienteList = clienteService.findAll();
+//		ModelAndView mv = new ModelAndView("cliente");
+//		mv.addObject("clienteService", clienteList);
+//		return mv;
+//	}
+	
 	@RequestMapping("/cadastro")
 	public String novo() {
 		return "cadastroCliente";
 	}
 	
-//	@RequestMapping(method = RequestMethod.POST)
+
 	@PostMapping
 	public ModelAndView salvar(Cliente cliente) {		
 		clienteService.cadastrar(cliente);
