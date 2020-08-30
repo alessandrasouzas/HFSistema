@@ -26,7 +26,7 @@ public class ClienteController {
 	
 
 	// Retorna a home view cliente
-	@GetMapping()
+	@RequestMapping()
 	public ModelAndView pesquisar() {
 		List<Cliente> clienteList = clienteService.findAll();
 		ModelAndView mv = new ModelAndView("cliente");
@@ -47,6 +47,10 @@ public class ClienteController {
 		return "cadastroCliente";
 	}
 	
+//	@RequestMapping()
+//	public String homeCliente() {
+//		return "cliente";
+//	}
 
 	@PostMapping
 	public ModelAndView salvar(Cliente cliente) {		
