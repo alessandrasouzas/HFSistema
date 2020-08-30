@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.hf.entity.Produto;
+import com.hf.model.Produto;
 
 @Component
 @Repository

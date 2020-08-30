@@ -1,4 +1,4 @@
-package com.hf.entity;
+package com.hf.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

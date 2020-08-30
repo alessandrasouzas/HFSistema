@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import  com.hf.entity.Produto;
+import com.hf.model.Produto;
 import  com.hf.repository.ProdutoRepository;
 
 @Component
@@ -23,7 +23,7 @@ public class ProdutoService {
 	}
 
 	
-	public List<Produto> buscarTodosProdutos() {
+	public List<Produto> findAll() {
 		return repository.findAll();
 	}
 

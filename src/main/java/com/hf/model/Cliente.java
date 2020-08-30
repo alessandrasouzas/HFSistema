@@ -1,7 +1,9 @@
-package com.hf.entity;
+package com.hf.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,7 +16,8 @@ import lombok.Setter;
 @Table(name="Cliente")
 public class Cliente {
 	
-	@Id
+	@Id 
+//	@GeneratedValue(strategy=GenerationType.IDENTITY) Long id;	
 	@Column(name="nome")
 	private String nome;
 
