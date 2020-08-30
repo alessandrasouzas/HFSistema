@@ -18,13 +18,23 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 
-	// Retorna a home view cliente 
+	// Retorna a home view cliente
 	@GetMapping()
 	public ModelAndView pesquisar() {
 		List<Cliente> clienteList = clienteService.findAll();
 		ModelAndView mv = new ModelAndView("cliente");
 		mv.addObject("clienteService", clienteList);
 		return mv;
+	}
+
+	@RequestMapping()
+	public String getCliente() {
+		return "cliente";
+	}
+
+	@RequestMapping("/novo")
+	public String getCadastroCliente() {
+		return "cadastroCliente";
 	}
 
 }
