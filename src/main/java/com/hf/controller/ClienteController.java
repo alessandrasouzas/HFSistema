@@ -5,18 +5,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hf.model.Cliente;
 import com.hf.service.ClienteService;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
 @Controller
 @RequestMapping("/cliente")
 public class ClienteController {
 
 	@Autowired
 	private ClienteService clienteService;
+	
+//	@Autowired
+//	private Cliente cliente;
 
 	// Retorna a home view cliente
 	@GetMapping()
@@ -27,14 +35,19 @@ public class ClienteController {
 		return mv;
 	}
 
-	@RequestMapping()
-	public String getCliente() {
-		return "cliente";
-	}
-
-	@RequestMapping("/novo")
-	public String getCadastroCliente() {
+	@RequestMapping("/cadastro")
+	public String novo() {
 		return "cadastroCliente";
 	}
+	
+//	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping
+	public ModelAndView salvar(Cliente cliente) {		
+		clienteService.cadastrar(cliente);
+		ModelAndView mv = new ModelAndView("cadastroCliente");
+		mv.addObject("mensagem", "cliente salvo com sucesso!");
+		return mv;
+	}
+	
 
 }

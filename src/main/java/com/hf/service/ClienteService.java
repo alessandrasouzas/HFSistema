@@ -18,4 +18,10 @@ public class ClienteService {
 		return clienteRepository.findAll();
 	}
 
+	public void cadastrar(Cliente cliente) {
+		System.out.println("chamando o repository -> salvando o cliente");
+		clienteRepository.save(cliente);
+		
+	}
+
 }

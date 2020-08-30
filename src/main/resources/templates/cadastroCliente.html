@@ -1,206 +1,217 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
-	  
-	<head>
-		<meta charset="UTF-8"/>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="viewport" content="width=device-width"/>
-		<title>Sistema HF</title>
-		<link rel="stylesheet" type="text/css" href="../_css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../_css/geral.css"/>
-		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-		<script type="text/javascript">
-			function relogio(){
-				var data = new Date();
-				var hora = data.getHours();
-				var minuto = data.getMinutes();
-				var segundo = data.getSeconds();
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 
-				if(hora<10){
-					hora = "0"+hora;
-				}
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Sistema HF</title>
+<link rel="stylesheet" type="text/css" href="../_css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../_css/geral.css" />
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script type="text/javascript">
+	function relogio() {
+		var data = new Date();
+		var hora = data.getHours();
+		var minuto = data.getMinutes();
+		var segundo = data.getSeconds();
 
-				if(minuto<10){
-					minuto = "0"+minuto;
-				}
+		if (hora < 10) {
+			hora = "0" + hora;
+		}
 
-				if(segundo<10){
-					segundo = "0"+segundo;
-				}
+		if (minuto < 10) {
+			minuto = "0" + minuto;
+		}
 
-				document.getElementById('relogio-digital').innerHTML=hora+":"+minuto+":"+segundo;
-			}
-			window.setInterval("relogio()",1000);
-		</script>
-	</head>
-	<body onload="relogio();">
-		<header>
-			<nav>
-				<input type="checkbox" id="check">
-				<label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
-				<div id="relogio-digital"></div>
-				<img class="logo" src="../_imagens/logo.png">
-				<img class="logout" src="../_imagens/logout.png">
+		if (segundo < 10) {
+			segundo = "0" + segundo;
+		}
 
-				<ul class="navegacao">
-					<li><a href="/home">Home</a></li>
-					<li><a href="/cliente" class="active">Clientes</a></li>
-					<li><a href="/produto">Produtos</a></li>
-					<li><a href="/home">Impressoras</a></li>
-					<li><a href="/home">Agenda</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="inicio">
-		</div>
-		
-		<div class="container">
-		
-			<div class="div_form_clientes">
-			
-			 	<div class="elemento cor-fundo">
-			      	<a href="/cliente"><img src="../_imagens/b.png"></a>
-			  	</div>
-			  	
-			  	<form method="POST" action="/cliente" >
-			  	
-			  		<div class="form_clientes_buscar">
-						<img class="teste" src="../_imagens/teste.png">
-					</div>
-					
-					<fieldset class="fieldset_empresa"><legend class="legenda_form_cliente">Empresa</legend>
-					
-						<input type="hidden"/>
-						
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="cliente">Cliente</label>
-								<input type="text" class="form-control form-control-sm" id="cliente"/>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="cnpj" >Cnpj</label>
-								<input type="text" class="form-control form-control-sm" id="cnpj"/>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="telefone">Telefone</label>
-								<input type="text" class="form-control form-control-sm" id="telefone"/>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="pagamento" >Pagamento</label>
-								<select class="form-control form-control-sm" id="pagamento">
-									<option value="BOLETO_14" selected>Boleto 14</option>
-									<option value="DINHEIRO">Dinheiro</option>
-									<option value="TRANSFERENCIA">Transferência</option>
-									<option value="BOLETO_07">Boleto 07</option>
-									<option value="BOLETO_21">Boleto 21</option>
-						            <option value="BOLETO_21_42">Boleto 21/ Boleto 42</option>
-								</select>
-							</div>
-						</div>
-						
-						<div class="form-row">
-							<div class="form-group col-md-5">
-								<label for="logradouro" >Logradouro</label>
-								<input type="text" class="form-control form-control-sm" id="logradouro"/>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="numero" >Número</label>
-								<input type="text" class="form-control form-control-sm" id="numero"/>
-							</div>
-							<div class="form-group col-md-5">
-								<label for="complemento" >Complemento</label>
-								<input type="text" class="form-control form-control-sm" id="complemento"/>
-							</div>
-						</div>
-						
-						<div class="form-row">
-							<div class="form-group col-md-4">
-								<label for="bairro" >Bairro</label>
-								<input type="text" class="form-control form-control-sm" id="bairro"/>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="cep" >Cep</label>
-								<input type="text" class="form-control form-control-sm" id="cep"/>
-							</div>
-							<div class="form-group col-md-5">
-								<label for="cidade" >Cidade</label>
-								<input type="text" class="form-control form-control-sm" id="cidade"/>
-							</div>
-							<div class="form-group col-md-1">
-								<label for="uf" >Uf</label>
-								<select class="form-control form-control-sm">
-									
-									<option value="SP" selected>SP</option>
-									<option value="AP">AP</option>
-					                <option value="AM">AM</option>
-					                <option value="PA">PA</option>
-					                <option value="RO">RO</option>
-					                <option value="RR">RR</option>
-					                <option value="TO">TO</option>
-				                    <option value="AL">AL</option>
-								    <option value="BA">BA</option>
-									<option value="CE">CE</option>
-								    <option value="MA">MA</option>
-									<option value="PB">PB</option>
-									<option value="PE">PE</option>
-									<option value="PI">PI</option>
-									<option value="RN">RN</option>
-									<option value="SE">SE</option>
-									<option value="DF">DF</option>
-									<option value="GO">GO</option>
-									<option value="MT">MT</option>
-									<option value="MS">MS</option>
-									<option value="ES">ES</option>
-									<option value="MG">MG</option>
-									<option value="RJ">RJ</option>
-									<option value="PR">PR</option>
-									<option value="RS">RS</option>
-									<option value="SC">SC</option>
-								</select>
-							</div>
-						</div>
-						
-						<div class="form-row">
-							<div class="form-group col-md-12">
-								<label for="observacao" >Observacao</label>
-							    <textarea class="form-control form-control-sm" id="observacao" rows="1"></textarea>
-							</div>
-						</div>
-					
-					</fieldset>
-					
-					<fieldset class="fieldset_empresa" id="contato"><legend class="legenda_form_cliente">Contato</legend>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="nome">Nome</label>
-								<input type="text" class="form-control form-control-sm" id="nome"/>
-							</div>
-							<div class="form-group col-md-2">
-								<label for="contato">Telefone</label>
-								<input type="text" class="form-control form-control-sm" id="telefone"/>
-							</div>
-							<div class="form-group col-md-4">
-								<label for="email" >Email</label>
-								<input type="text" class="form-control form-control-sm" id="email"/>
-							</div>
-						</div>
-					</fieldset>
-					
-					<fieldset class="fieldset_empresa" id="botao">
-						<div class="form-row row justify-content-end">
-							<div class="form-group">
-								<button class="btn btn-primary btn-sm" type="submit">Adicionar</button>
-							</div>
-						</div>
-					</fieldset>
-			  	
-			  	</form>
+		document.getElementById('relogio-digital').innerHTML = hora + ":"
+				+ minuto + ":" + segundo;
+	}
+	window.setInterval("relogio()", 1000);
+</script>
+</head>
+<body onload="relogio();">
+	<header>
+		<nav>
+			<input type="checkbox" id="check"> <label for="check"
+				class="checkbtn"><i class="fas fa-bars"></i></label>
+			<div id="relogio-digital"></div>
+			<img class="logo" src="../_imagens/logo.png"> <img
+				class="logout" src="../_imagens/logout.png">
+
+			<ul class="navegacao">
+				<li><a href="/home">Home</a></li>
+				<li><a href="/cliente" class="active">Clientes</a></li>
+				<li><a href="/produto">Produtos</a></li>
+				<li><a href="/home">Impressoras</a></li>
+				<li><a href="/home">Agenda</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="inicio"></div>
+
+	<div class="container">
+
+		<div class="div_form_clientes">
+
+			<div class="elemento cor-fundo">
+				<a href="/cliente"><img src="../_imagens/b.png"></a>
 			</div>
+
+			<div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+				<span th:text="${mensagem}"></span>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<form method="POST" action="/cliente">
+
+				<div class="form_clientes_buscar">
+					<img class="teste" src="../_imagens/teste.png">
+				</div>
+
+				<fieldset class="fieldset_empresa">
+					<legend class="legenda_form_cliente">Empresa</legend>
+
+					<input type="hidden" />
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="cliente">Cliente</label> <input type="text"
+								class="form-control form-control-sm" id="cliente" name="nome" />
+						</div>
+						<div class="form-group col-md-2">
+							<label for="cnpj">Cnpj</label> <input type="text"
+								class="form-control form-control-sm" id="cnpj" name="cnpj" />
+						</div>
+						<div class="form-group col-md-2">
+							<label for="telefone">Telefone</label> <input type="text"
+								class="form-control form-control-sm" id="telefone" />
+						</div>
+						<div class="form-group col-md-2">
+							<label for="pagamento">Pagamento</label> <select
+								class="form-control form-control-sm" id="pagamento">
+								<option value="BOLETO_14" selected>Boleto 14</option>
+								<option value="DINHEIRO">Dinheiro</option>
+								<option value="TRANSFERENCIA">Transferência</option>
+								<option value="BOLETO_07">Boleto 07</option>
+								<option value="BOLETO_21">Boleto 21</option>
+								<option value="BOLETO_21_42">Boleto 21/ Boleto 42</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-5">
+							<label for="logradouro">Logradouro</label> <input type="text"
+								class="form-control form-control-sm" id="logradouro" />
+						</div>
+						<div class="form-group col-md-2">
+							<label for="numero">Número</label> <input type="text"
+								class="form-control form-control-sm" id="numero" />
+						</div>
+						<div class="form-group col-md-5">
+							<label for="complemento">Complemento</label> <input type="text"
+								class="form-control form-control-sm" id="complemento" />
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="bairro">Bairro</label> <input type="text"
+								class="form-control form-control-sm" id="bairro" />
+						</div>
+						<div class="form-group col-md-2">
+							<label for="cep">Cep</label> <input type="text"
+								class="form-control form-control-sm" id="cep" />
+						</div>
+						<div class="form-group col-md-5">
+							<label for="cidade">Cidade</label> <input type="text"
+								class="form-control form-control-sm" id="cidade" />
+						</div>
+						<div class="form-group col-md-1">
+							<label for="uf">Uf</label> <select
+								class="form-control form-control-sm">
+
+								<option value="SP" selected>SP</option>
+								<option value="AP">AP</option>
+								<option value="AM">AM</option>
+								<option value="PA">PA</option>
+								<option value="RO">RO</option>
+								<option value="RR">RR</option>
+								<option value="TO">TO</option>
+								<option value="AL">AL</option>
+								<option value="BA">BA</option>
+								<option value="CE">CE</option>
+								<option value="MA">MA</option>
+								<option value="PB">PB</option>
+								<option value="PE">PE</option>
+								<option value="PI">PI</option>
+								<option value="RN">RN</option>
+								<option value="SE">SE</option>
+								<option value="DF">DF</option>
+								<option value="GO">GO</option>
+								<option value="MT">MT</option>
+								<option value="MS">MS</option>
+								<option value="ES">ES</option>
+								<option value="MG">MG</option>
+								<option value="RJ">RJ</option>
+								<option value="PR">PR</option>
+								<option value="RS">RS</option>
+								<option value="SC">SC</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-12">
+							<label for="observacao">Observacao</label>
+							<textarea class="form-control form-control-sm" id="observacao"
+								rows="1"></textarea>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="fieldset_empresa" id="contato">
+					<legend class="legenda_form_cliente">Contato</legend>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="nome">Nome</label> <input type="text"
+								class="form-control form-control-sm" id="nome" />
+						</div>
+						<div class="form-group col-md-2">
+							<label for="contato">Telefone</label> <input type="text"
+								class="form-control form-control-sm" id="telefone" />
+						</div>
+						<div class="form-group col-md-4">
+							<label for="email">Email</label> <input type="text"
+								class="form-control form-control-sm" id="email" />
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="fieldset_empresa" id="botao">
+					<div class="form-row row justify-content-end">
+						<div class="form-group">
+							<button class="btn btn-primary btn-sm" type="submit">Adicionar</button>
+						</div>
+					</div>
+				</fieldset>
+
+			</form>
 		</div>
-			
-		<script src="../_js/jquery-3.5.0.min.js"></script>
-		<script src="../_js/bootstrap.min.js"></script>
-	</body>
+	</div>
+
+	<script src="../_js/jquery-3.5.0.min.js"></script>
+	<script src="../_js/bootstrap.min.js"></script>
+</body>
 </html>
 
 
