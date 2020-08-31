@@ -1,18 +1,14 @@
 package com.hf.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.hf.model.Cliente;
 import com.hf.service.ClienteService;
-
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -26,7 +22,7 @@ public class ClienteController {
 	
 
 	// Retorna a home view cliente
-	@RequestMapping()
+	@GetMapping()
 	public ModelAndView pesquisar() {
 		List<Cliente> clienteList = clienteService.findAll();
 		ModelAndView mv = new ModelAndView("cliente");
@@ -47,10 +43,6 @@ public class ClienteController {
 		return "cadastroCliente";
 	}
 	
-//	@RequestMapping()
-//	public String homeCliente() {
-//		return "cliente";
-//	}
 
 	@PostMapping
 	public ModelAndView salvar(Cliente cliente) {		
