@@ -68,33 +68,25 @@
 						<table class="table table-bordered table-hover">
 							<thead>
 								<tr class="table-secondary">
-									<th scope="col">cliente</th>
-									<th scope="col">contato</th>
-									<th scope="col">telefone</th>
-									<th scope="col">email</th>
-									<th></th>
+									<th class="text-center col-lg-auto">cliente</th>
+									<th class="text-center col-lg-auto">contato</th>
+									<th class="text-center col-lg-auto">telefone</th>
+									<th class="text-center col-lg-auto">email</th>
+									<th class="text-center col-mcol-lg-autod-1"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr th:each="cliente:${clientes}">
-									<td th:text="${cliente.cli}"></td>
 									<td th:text="${cliente.nome}"></td>
-									<td th:text="${cliente.contato}"></td>
-									<td th:text="${cliente.email}"></td>
+									<td th:text="${cliente.nomeContato}"></td>
+									<td th:text="${cliente.telefoneContato}"></td>
+									<td th:text="${cliente.emailContato}"></td>
 									<td>
-										<a th:href="@{/cliente/{codigo}(codigo=${cliente.codigo})}">
-											<img class="lapis" src="/_imagens/las.svg">
-										</a>
-										
-										<a th:href="@{/cliente/{codigo}(codigo=${cliente.codigo})}">
-											<img class="lapis" src="/_imagens/excluir.svg">
-										</a>
-										
-										<a th:href="@{/cliente/{codigo}(codigo=${cliente.codigo})}">
-											<img class="lapis" src="/_imagens/informacoes.svg">
-										</a>
 										
 									</td>
+								</tr>
+								
+								<tr>
 									<td colspan="5" th:if="${#lists.isEmpty(clientes)}">Nenhum cliente foi encontrado</td>
 								</tr>
 							</tbody>
@@ -103,8 +95,8 @@
 				</form>
 			</div>
 		</div>
-		<script src="/js/jquery-3.5.0.min.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
+		<script src="../_js/jquery-3.5.0.min.js"></script>
+		<script src="../_js/bootstrap.min.js"></script>
 	</body>
 </html>
 

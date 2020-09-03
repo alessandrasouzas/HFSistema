@@ -26,18 +26,10 @@ public class ClienteController {
 	public ModelAndView pesquisar() {
 		List<Cliente> clienteList = clienteService.findAll();
 		ModelAndView mv = new ModelAndView("cliente");
-		mv.addObject("clienteService", clienteList);
+		mv.addObject("clientes", clienteList);
 		return mv;
 	}
 
-//	@GetMapping("/{nome}")
-//	public ModelAndView pesquisar(@PathVariable ("nome") String nome) {
-//		List<Cliente> clienteList = clienteService.findAll();
-//		ModelAndView mv = new ModelAndView("cliente");
-//		mv.addObject("clienteService", clienteList);
-//		return mv;
-//	}
-	
 	@RequestMapping("/cadastro")
 	public String novo() {
 		return "cadastroCliente";
@@ -52,5 +44,6 @@ public class ClienteController {
 		return mv;
 	}
 	
+	 
 
 }
