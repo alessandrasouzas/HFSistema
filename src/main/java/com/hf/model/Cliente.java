@@ -7,12 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
-import com.hf.enums.PagamentoClienteEnum;
-import com.hf.enums.UfClienteEnum;
 
-//@Getter
-//@Setter
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
@@ -20,37 +17,25 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@NotEmpty(message="Preenchimento do nome é obrigatório")
 	private String nome;
-	
+	@NotEmpty(message="Preenchimento do cnpj é obrigatório")
 	private String cnpj;
-	
+	@NotEmpty(message="Preenchimento do telefone é obrigatório")
 	private String telefone;
-		
 	@Enumerated(EnumType.STRING)
-	private PagamentoClienteEnum pagamento;
-	
+	private PagamentoCliente pagamento;
 	private String logradouro;
-	
 	private String numero;
-	
 	private String complemento;
-	
 	private String bairro;
-	
 	private String cep;
-	
 	private String cidade;
-	
 	@Enumerated(EnumType.STRING)
-	private UfClienteEnum uf;
-	
+	private UfCliente uf;
 	private String observacao;
-	
 	private String nomeContato;
-	
 	private String telefoneContato;
-	
 	private String emailContato;
 	
 	
@@ -87,16 +72,20 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 	
-	public PagamentoClienteEnum getPagamento() {
+	public PagamentoCliente getPagamento() {
 		return pagamento;
 	}
 
-	public void setPagamento(PagamentoClienteEnum pagamento) {
+	public void setPagamento(PagamentoCliente pagamento) {
 		this.pagamento = pagamento;
 	}
 
 	public String getLogradouro() {
 		return logradouro;
+	}
+	
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
 	public String getBairro() {
@@ -123,16 +112,12 @@ public class Cliente {
 		this.cidade = cidade;
 	}
 
-	public UfClienteEnum getUf() {
+	public UfCliente getUf() {
 		return uf;
 	}
 
-	public void setUf(UfClienteEnum uf) {
+	public void setUf(UfCliente uf) {
 		this.uf = uf;
-	}
-
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
 	}
 
 	public String getNumero() {

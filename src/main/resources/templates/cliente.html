@@ -53,26 +53,48 @@
 		<div class="inicio">
 		</div>
 		
+		<div class="alert alert-primary alert-dismissible fade show"
+			role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+			<span th:text="${mensagem}"></span>
+			<button type="button" class="close" data-dismiss="alert"aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		
 		<div class="container">
 			
 			<div class="div_form_clientes">
-				<div class="elemento cor-fundo">
+				<div class="elemento cor-fundo" title="Adicionar Cliente" rel="tooltip" data-placement="left">
 			    	<a href="/cliente/cadastro"><img src="../_imagens/add.png"></a>
 			  	</div>
 			  
-				<form>
+				<div>
 					<div class="form_clientes_buscar">
 						<img class="teste" src="../_imagens/lateral_pesqisa.png">
 					</div>
 					<fieldset class="fieldset_conf">
+					
+						<form method="GET" class="form-horizontal">
+							<div>
+								<div class="col-sm-5">
+									<div class="input-group">
+										<input class="input-control" placeholder="Digite nome do cliente" autofocus="autofocus" name="nome"></input>
+										<span class="input-group-btn">
+											<button class="btn btn-primary btn-sm btn-margin" type="submit">Pesquisar</button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</form>	
+								
 						<table class="table table-bordered table-hover">
 							<thead>
 								<tr class="table-secondary">
-									<th class="text-center col-lg-auto">cliente</th>
-									<th class="text-center col-lg-auto">contato</th>
-									<th class="text-center col-lg-auto">telefone</th>
-									<th class="text-center col-lg-auto">email</th>
-									<th class="text-center col-mcol-lg-autod-1"></th>
+									<th class="text-center ">CLIENTE</th>
+									<th class="text-center ">CONTATO</th>
+									<th class="text-center ">TELEFONE</th>
+									<th class="text-center ">EMAIL</th>
+									<th class="text-center ">LINK'S</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -82,35 +104,75 @@
 									<td th:text="${cliente.telefoneContato}"></td>
 									<td th:text="${cliente.emailContato}"></td>
 									<td>
-										
+										<a th:href="@{/cliente/{id}(id=${cliente.id})}" title="Editar" rel="tooltip" data-placement="top">
+											<img class="img_borda" src="/_imagens/editar.svg" onmouseover="this.src='/_imagens/editarHover.svg'" onmouseout="this.src='/_imagens/editar.svg'"/>
+										</a>
+													
+										<a data-toggle="modal" data-target="#confirmacaoExclusaoModal" th:attr="data-id=${cliente.id},data-nome=${cliente.nome}" title="Excluir" rel="tooltip" data-placement="top">
+											<img class="img_borda"  src="/_imagens/excluir.svg" onmouseover="this.src='/_imagens/excluirHover.svg'" onmouseout="this.src='/_imagens/excluir.svg'"/>
+										</a>
+													
+										<a th:href="@{/cliente/{id}(id=${cliente.id})}" title="Carregar" rel="tooltip" data-placement="top">
+											<img class="img_borda"  src="/_imagens/caregar.svg" onmouseover="this.src='/_imagens/caregarHover.svg'" onmouseout="this.src='/_imagens/caregar.svg'"/>
+										</a>
 									</td>
 								</tr>
-								
+										
 								<tr>
 									<td colspan="5" th:if="${#lists.isEmpty(clientes)}">Nenhum cliente foi encontrado</td>
 								</tr>
 							</tbody>
 						</table>
 					</fieldset>
-				</form>
+				</div>
 			</div>
 		</div>
+
+			<div class="modal fade" id="confirmacaoExclusaoModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+				<div class="modal-dialog">
+				
+					
+					<form method="POST" th:attr="data-url-base='cliente/'">
+					
+					
+						<!-- <form method="POST" action="cliente/">  
+						<input type="hidden" name="_method" value="DELETE"/> -->
+						
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Confirmação de Exclusão</h4>
+							</div>
+							<div class="modal-body">
+								<span>Tem certeza que deseja apagar o Cliente?</span>
+							</div>	
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+								<button type="submit" class="btn btn-primary">Excluir</button>
+							</div> 
+						</div>
+					</form>
+				</div>
+			</div>
+		
 		<script src="../_js/jquery-3.5.0.min.js"></script>
+		<script src="../_js/popper.min.js"></script>
 		<script src="../_js/bootstrap.min.js"></script>
+		<script src="../_js/sistema-hf.js"></script>
 	</body>
 </html>
 
 
-
-
-
-
-
-
-
-
-
-
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
 
 
 

@@ -7,11 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
+//import lombok.Getter;
+//import lombok.Setter;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Entity
 @Table(name="TProduto")
 public class Produto {
@@ -33,6 +33,56 @@ public class Produto {
 	
 	@Column(name="PROD_MARKUP")
 	private Double markup;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Double getValorDeCompra() {
+		return valorDeCompra;
+	}
+
+	public void setValorDeCompra(Double valorDeCompra) {
+		this.valorDeCompra = valorDeCompra;
+	}
+
+	public Double getValorDeVenda() {
+		return valorDeVenda;
+	}
+
+	public void setValorDeVenda(Double valorDeVenda) {
+		this.valorDeVenda = valorDeVenda;
+	}
+
+	public Double getMarkup() {
+		return markup;
+	}
+
+	public void setMarkup(Double markup) {
+		this.markup = markup;
+	}
+	
+	
 	
 	
 }

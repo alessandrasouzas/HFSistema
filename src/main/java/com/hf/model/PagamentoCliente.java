@@ -1,6 +1,6 @@
-package com.hf.enums;
+package com.hf.model;
 
-public enum PagamentoClienteEnum {
+public enum PagamentoCliente {
 	
 	DINHEIRO("Dinheiro"),
 	TRANSFERENCIA("Transferência"),
@@ -11,7 +11,7 @@ public enum PagamentoClienteEnum {
 	
 	private String descricaoPagamento;
 	
-	PagamentoClienteEnum(String descricaoPagamento){
+	PagamentoCliente(String descricaoPagamento){
 		this.descricaoPagamento=descricaoPagamento;
 	}
 	

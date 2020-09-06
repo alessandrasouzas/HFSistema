@@ -9,11 +9,7 @@
 
 
 
-.has-error {
-    color: #d62f13b8;
-    background-color: #b5151524;
-    border-radius: .25rem;
-}
+
 
 
 .elemento {
@@ -75,8 +71,14 @@ body{
   ---------------------------------------*/
 
 label {
-    margin-bottom: 0.2rem;
-    color:#0000005c;
+    margin-bottom: 0.2rem; 
+    color:#0000005c;   
+}
+
+.has-error {
+    color: #b81423b3 !important;  
+    background-color: #b5151524;
+    border-radius: .1rem;
 }
 
 .form-control {

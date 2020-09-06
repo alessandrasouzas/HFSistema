@@ -55,7 +55,8 @@
 	</header>
 	<div class="inicio"></div>
 
-	<div class="container">
+	<div class="container" th:object="${cliente}">
+	
 		<div class="alert alert-primary alert-dismissible fade show"
 			role="alert" th:if="${!#strings.isEmpty(mensagem)}">
 			<span th:text="${mensagem}"></span>
@@ -64,9 +65,20 @@
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
+		
+		<div class="alert alert-secundary alert-dismissible fade show" role="alert" th:if="${#fields.hasAnyErrors()}" >
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+			</button>
+			 
+			<div th:each="detailedError:${#fields.detailedErrors()}">
+				<span th:text="${detailedError.message}"></span>
+			</div>	
+		</div>
+		
 		<div class="div_form_clientes">
 
-			<div class="elemento cor-fundo">
+			<div class="elemento cor-fundo" title="Pesquisar Cliente" rel="tooltip" data-placement="left">
 				<a href="/cliente"><img src="../_imagens/b.png"></a>
 			</div>
 
@@ -81,25 +93,26 @@
 				<fieldset class="fieldset_empresa">
 					<legend class="legenda_form_cliente">Empresa</legend>
 
-					<input type="hidden" />
+					<input type="hidden" th:field="*{id}"/>
 
 					<div class="form-row">
-						<div class="form-group col-md-6">
-							<label for="cliente">Cliente</label> <input type="text"
-								class="form-control form-control-sm" id="cliente" name="nome" />
+						<div class="form-group col-md-6"th:classappend="${#fields.hasErrors('nome')}?has-error">
+							<label for="cliente" title="* Preenchimento obrigatório" rel="tooltip" data-placement="top">* Cliente</label> 
+							<input type="text"class="form-control form-control-sm" id="cliente" autofocus="autofocus" th:field="*{nome}" />
 						</div>
-						<div class="form-group col-md-2">
-							<label for="cnpj">Cnpj</label> <input type="text"
-								class="form-control form-control-sm" id="cnpj" name="cnpj" />
+						<div class="form-group col-md-2"th:classappend="${#fields.hasErrors('cnpj')}?has-error">
+							<label for="cnpj" title="* Preenchimento obrigatório" rel="tooltip" data-placement="top">* Cnpj</label>
+							<input type="text"class="form-control form-control-sm" id="cnpj" th:field="*{cnpj}" />
 						</div>
-						<div class="form-group col-md-2">
-							<label for="telefone">Telefone</label> <input type="text"
-								class="form-control form-control-sm" id="telefone" name="telefone" />
+						<div class="form-group col-md-2"th:classappend="${#fields.hasErrors('telefone')}?has-error">
+							<label for="telefone" title="* Preenchimento obrigatório" rel="tooltip" data-placement="top">* Telefone</label> 
+							<input type="text"class="form-control form-control-sm" id="telefone" th:field="*{telefone}" />
 						</div>
 						
 						<div class="form-group col-md-2">
-							<label for="pagamento">Pagamento</label> <select
-								class="form-control form-control-sm" id="pagamento" name="pagamento">
+							<label for="pagamento">Pagamento</label> 
+							<select
+								class="form-control form-control-sm" id="pagamento" th:field="*{pagamento}">
 								<option value="BOLETO_14" selected>Boleto 14</option>
 								<option value="DINHEIRO">Dinheiro</option>
 								<option value="TRANSFERENCIA">Transferência</option>
@@ -112,35 +125,35 @@
 					
 					<div class="form-row">
 						<div class="form-group col-md-5">
-							<label for="logradouro">Logradouro</label> <input type="text"
-								class="form-control form-control-sm" id="logradouro" name="logradouro" />
+							<label for="logradouro">Logradouro</label> 
+							<input type="text"class="form-control form-control-sm" id="logradouro" th:field="*{logradouro}" />
 						</div>
 						<div class="form-group col-md-2">
-							<label for="numero">Número</label> <input type="text"
-								class="form-control form-control-sm" id="numero" name="numero"/>
+							<label for="numero">Número</label> 
+							<input type="text"class="form-control form-control-sm" id="numero" th:field="*{numero}"/>
 						</div>
 						<div class="form-group col-md-5">
-							<label for="complemento">Complemento</label> <input type="text"
-								class="form-control form-control-sm" id="complemento" name="complemento" />
+							<label for="complemento">Complemento</label> 
+							<input type="text"class="form-control form-control-sm" id="complemento" th:field="*{complemento}" />
 						</div>
 					</div>
 					
 					<div class="form-row">
 						<div class="form-group col-md-4">
-							<label for="bairro">Bairro</label> <input type="text"
-								class="form-control form-control-sm" id="bairro" name="bairro" />
+							<label for="bairro">Bairro</label> 
+							<input type="text"class="form-control form-control-sm" id="bairro" th:field="*{bairro}" />
 						</div>
 						<div class="form-group col-md-2">
-							<label for="cep">Cep</label> <input type="text"
-								class="form-control form-control-sm" id="cep" name="cep" />
+							<label for="cep">Cep</label> 
+							<input type="text"class="form-control form-control-sm" id="cep" th:field="*{cep}" />
 						</div>
 						<div class="form-group col-md-5">
-							<label for="cidade">Cidade</label> <input type="text"
-								class="form-control form-control-sm" id="cidade" name="cidade" />
+							<label for="cidade">Cidade</label> 
+							<input type="text"class="form-control form-control-sm" id="cidade" th:field="*{cidade}" />
 						</div>
 						<div class="form-group col-md-1">
-							<label for="uf">Uf</label> <select
-								class="form-control form-control-sm" name="uf">
+							<label for="uf">Uf</label> 
+							<select class="form-control form-control-sm" th:field="*{uf}">
 
 								<option value="SP" selected>SP</option>
 								<option value="AP">AP</option>
@@ -175,7 +188,7 @@
 					<div class="form-row">
 						<div class="form-group col-md-12">
 							<label for="observacao">Observacao</label>
-							<textarea class="form-control form-control-sm" id="observacao" rows="1" name="observacao"></textarea>
+							<textarea class="form-control form-control-sm" id="observacao" rows="1" th:field="*{observacao}"></textarea>
 						</div>
 					</div>
 					
@@ -189,18 +202,18 @@
 					<div class="form-row">
 					
 						<div class="form-group col-md-6">
-							<label for="nome">Nome</label> <input type="text"
-								class="form-control form-control-sm" id="nome" name="nomeContato"/>
+							<label for="nome">Nome</label> 
+							<input type="text"class="form-control form-control-sm" id="nome" th:field="*{nomeContato}"/>
 						</div>
 						
 						<div class="form-group col-md-2">
-							<label for="contato">Telefone</label> <input type="text"
-								class="form-control form-control-sm" id="telefone" name="telefoneContato" />
+							<label for="contato">Telefone</label> 
+							<input type="text"class="form-control form-control-sm" id="telefoneContato" th:field="*{telefoneContato}" />
 						</div>
 						
 						<div class="form-group col-md-4">
-							<label for="email">Email</label> <input type="text"
-								class="form-control form-control-sm" id="email" name="emailContato" />
+							<label for="email">Email</label> 
+							<input type="text"class="form-control form-control-sm" id="email" th:field="*{emailContato}" />
 						</div>
 						
 					</div>
@@ -212,7 +225,7 @@
 				<fieldset class="fieldset_empresa" id="botao">
 					<div class="form-row row justify-content-end">
 						<div class="form-group">
-							<button class="btn btn-primary btn-sm" type="submit">Adicionar</button>
+							<button class="btn btn-primary btn-sm" type="submit">Salvar</button>
 						</div>
 					</div>
 				</fieldset>
@@ -222,7 +235,10 @@
 	</div>
 
 	<script src="../_js/jquery-3.5.0.min.js"></script>
+	<script src="../_js/popper.min.js"></script>
 	<script src="../_js/bootstrap.min.js"></script>
+	<script src="../_js/jquery.mask.min.js"></script>
+	<script src="../_js/sistema-hf.js"></script>
 </body>
 </html>
 

@@ -1,6 +1,6 @@
-package com.hf.enums;
+package com.hf.model;
 
-public enum UfClienteEnum {
+public enum UfCliente {
 
 		AC("AC"),
 		AP("AP"),
@@ -32,7 +32,7 @@ public enum UfClienteEnum {
 		
 	private String descricaoUf;
 		
-		UfClienteEnum(String descricaoUf){
+		UfCliente(String descricaoUf){
 			this.descricaoUf=descricaoUf;
 		}
 		
