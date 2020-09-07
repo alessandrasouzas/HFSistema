@@ -47,7 +47,7 @@ public class ClienteController {
 
 	// Salva registro no bd e Retorna para view cliente/cadastro
 	@PostMapping
-	public String salvar(@Validated Cliente cliente, Errors errors,RedirectAttributes attributes) {	
+	public String salvar(@Validated Cliente cliente, Errors errors, RedirectAttributes attributes) {	
 		if(errors.hasErrors()){
 			return "cadastroCliente";
 		}
@@ -72,7 +72,7 @@ public class ClienteController {
 	@PostMapping("{id}")
 	public String excluir(@PathVariable("id") Long id, RedirectAttributes attributes){
 		clienteService.removerPeloId(id);
-		attributes.addFlashAttribute("mensagem", "Cliente excluido com sucesso!");
+		attributes.addFlashAttribute("mensagem", "cliente excluido com sucesso!");
 		return "redirect:/cliente";
 	}
 	
