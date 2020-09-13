@@ -1,0 +1,19 @@
+/*---------------------------------------
+  ------- CONFIGURAÇÕES TOOLTIP----------
+  ---------------------------------------*/
+
+.tooltip-inner {
+  font-size: 10px;
+  color:white;
+  background-color: #45ad5d;
+  text-align: center;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.tooltip .arrow:before {
+    border-top-color: #45ad5d;
+}
+

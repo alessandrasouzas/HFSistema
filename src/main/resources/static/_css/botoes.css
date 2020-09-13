@@ -1,0 +1,28 @@
+/*---------------------------------------
+  ------- CONFIGURAÇÕES BOTÕES  ---------
+  ---------------------------------------*/
+
+#botao{
+	background:none;
+	border:none;
+	margin: -20px 20px 0px 0px;
+}
+
+.btn-sm{
+	font-size: .750rem;
+	border-radius: 6px 0px 6px 0px;
+	padding: 5px 14px;
+	border:none;
+	transition: all .8s ease;
+	margin: 0px 5px 0px 0px;
+}
+
+.btn-sm:hover,.btn-sm:focus{
+	background: #45ad5d;
+}
+
+.btn-margin{
+	margin: 20px 0px 0px 0px;
+}
+
+

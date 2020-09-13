@@ -7,9 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-
-
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
@@ -17,11 +14,8 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotEmpty(message="Preenchimento do nome é obrigatório")
 	private String nome;
-	@NotEmpty(message="Preenchimento do cnpj é obrigatório")
 	private String cnpj;
-	@NotEmpty(message="Preenchimento do telefone é obrigatório")
 	private String telefone;
 	@Enumerated(EnumType.STRING)
 	private PagamentoCliente pagamento;

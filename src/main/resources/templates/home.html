@@ -5,8 +5,9 @@
 		<title>Sistema HF - Soluções</title>
 		<link rel="shortcut icon" href="../_imagens/logo-aba.png">
 		<meta name="vieport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="stylesheet" type="text/css" href="../_css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="../_css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="../_css/geral.css"/>
+		<link rel="stylesheet" type="text/css" href="../_css/navbar.css"/>
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<script type="text/javascript">
 			function relogio(){
@@ -33,7 +34,7 @@
 		</script>
 	</head>
 	<body onload="relogio();">
-		<p th:text="'Hello, ' + ${name} + '!'" />
+		
 		<header>
 			<nav>
 				<input type="checkbox" id="check">
@@ -41,12 +42,11 @@
 				<div id="relogio-digital"></div>
 				<img class="logo" src="../_imagens/logo.png">
 				<img class="logout" src="../_imagens/logout.png">
-				<input type="search" name="busca" id="busca" class="busca" placeholder="Buscar">
-
+				
 				<ul class="navegacao">
-					<li><a href="/home" class="active">Home</a></li>
+					<li><a href="/home">Home</a></li>
 					<li><a href="/cliente">Clientes</a></li>
-					<li><a href="/produto">Produtos</a></li>
+					<li><a href="/home">Produtos</a></li>
 					<li><a href="/home">Impressoras</a></li>
 					<li><a href="/home">Agenda</a></li>
 				</ul>

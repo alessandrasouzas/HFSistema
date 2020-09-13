@@ -7,9 +7,19 @@
 <title>Sistema HF</title>
 <link rel="stylesheet" type="text/css" href="../_css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="../_css/cliente.css" />
-<link rel="stylesheet" type="text/css"
-	href="../_css/pesquisaCliente.css" />
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" type="text/css" href="../_css/geral.css" />
+<link rel="stylesheet" type="text/css" href="../_css/navbar.css" />
+<link rel="stylesheet" type="text/css" href="../_css/tooltip.css" />
+<link rel="stylesheet" type="text/css" href="../_css/alert.css" />
+<link rel="stylesheet" type="text/css" href="../_css/botoes.css" />
+
+<script type="text/javascript" src="../_js/jquery-3.5.0.min.js"></script>
+<script type="text/javascript" src="../_js/popper.min.js"></script>
+<script type="text/javascript" src="../_js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_js/sistema-hf.js"></script>
+<script type="text/javascript" src="../_js/sistema-hf.js"></script>
+<script type="text/javascript"
+	src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script type="text/javascript">
 	function relogio() {
 		var data = new Date();
@@ -34,6 +44,7 @@
 	}
 	window.setInterval("relogio()", 1000);
 </script>
+
 </head>
 <body onload="relogio();">
 	<header>
@@ -46,8 +57,8 @@
 
 			<ul class="navegacao">
 				<li><a href="/home">Home</a></li>
-				<li><a href="/cliente" class="active">Clientes</a></li>
-				<li><a href="/produto">Produtos</a></li>
+				<li><a href="/cliente">Clientes</a></li>
+				<li><a href="/home">Produtos</a></li>
 				<li><a href="/home">Impressoras</a></li>
 				<li><a href="/home">Agenda</a></li>
 			</ul>
@@ -67,14 +78,14 @@
 	<div class="container">
 
 		<div class="div_form_clientes">
-			<div class="elemento cor-fundo" title="Adicionar Cliente"
-				rel="tooltip" data-placement="left">
-				<a href="/cliente/cadastro"><img src="../_imagens/add.png"></a>
+			<div class="elemento" title="Adicionar Cliente" rel="tooltip"
+				data-delay='{"show":"1000", "hide":"1500"}' data-placement="top">
+				<a href="/cliente/cadastro"><img src="../_imagens/adicionar.png"></a>
 			</div>
 
 			<div>
 				<div class="form_clientes_buscar">
-					<img class="teste" src="../_imagens/lateral_pesqisa.png">
+					<img src="../_imagens/lateral_pesqisa.png">
 				</div>
 				<fieldset class="fieldset_conf">
 
@@ -82,7 +93,7 @@
 						<div>
 							<div class="col-sm-5">
 								<div class="input-group">
-									<input class="input-control"
+									<input class="input_control"
 										placeholder="Digite nome do cliente" autofocus="autofocus"
 										name="nome"></input> <span class="input-group-btn">
 										<button class="btn btn-primary btn-sm btn-margin"
@@ -96,33 +107,36 @@
 					<table class="table table-bordered table-hover">
 						<thead>
 							<tr class="table-secondary">
-								<th class="text-center" style="width: 30%">CLIENTE</th>
-								<th class="text-center" style="width: 15%">CONTATO</th>
-								<th class="text-center" style="width: 20%">TELEFONE</th>
-								<th class="text-center" style="width: 25%">EMAIL</th>
-								<th class="text-center" style="width: 10%">LINK'S</th>
+								<th class="text-center" style="width: 54%">CLIENTE</th>
+								<th class="text-center" style="width: 8%">CONTATO</th>
+								<th class="text-center" style="width: 12%">TELEFONE</th>
+								<th class="text-center" style="width: 15%">EMAIL</th>
+								<th class="text-center" style="width: 11%">LINK'S</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr th:each="cliente:${clientes}">
-								<td th:text="${cliente.nome}"></td>
-								<td th:text="${cliente.nomeContato}"></td>
-								<td th:text="${cliente.telefoneContato}"></td>
-								<td th:text="${cliente.emailContato}"></td>
+								<td class="maiusculo" th:text="${cliente.nome}"></td>
+								<td class="maiusculo" th:text="${cliente.nomeContato}"></td>
+								<td class="maiusculo" th:text="${cliente.telefone}"></td>
+								<td class="maiusculo" th:text="${cliente.emailContato}"></td>
 								<td><a th:href="@{/cliente/{id}(id=${cliente.id})}"
-									title="Editar" rel="tooltip" data-placement="top"> <img
-										class="img_borda" src="/_imagens/editar.png"
+									title="Editar" rel="tooltip"
+									data-delay='{"show":"1000", "hide":"900"}' data-placement="top">
+										<img class="img_borda" src="/_imagens/editar.png"
 										onmouseover="this.src='/_imagens/editarHover.png'"
 										onmouseout="this.src='/_imagens/editar.png'" />
 								</a> <a data-toggle="modal" data-target="#confirmacaoExclusaoModal"
 									th:attr="data-id=${cliente.id},data-nome=${cliente.nome}"
-									title="Excluir" rel="tooltip" data-placement="top"> <img
-										class="img_borda" src="/_imagens/excluir.png"
+									title="Excluir" rel="tooltip"
+									data-delay='{"show":"1000", "hide":"900"}' data-placement="top">
+										<img class="img_borda" src="/_imagens/excluir.png"
 										onmouseover="this.src='/_imagens/excluirHover.png'"
 										onmouseout="this.src='/_imagens/excluir.png'" />
 								</a> <a th:href="@{/cliente/{id}(id=${cliente.id})}"
-									title="Carregar" rel="tooltip" data-placement="top"> <img
-										class="img_borda" src="/_imagens/caregar.png"
+									title="Carregar" rel="tooltip"
+									data-delay='{"show":"1000", "hide":"900"}' data-placement="top">
+										<img class="img_borda" src="/_imagens/caregar.png"
 										onmouseover="this.src='/_imagens/caregarHover.png'"
 										onmouseout="this.src='/_imagens/caregar.png'" />
 								</a></td>
@@ -142,34 +156,24 @@
 	<div class="modal fade" id="confirmacaoExclusaoModal" tabindex="-1"
 		data-keyboard="false" data-backdrop="static">
 		<div class="modal-dialog">
-
-
 			<form method="POST" th:attr="data-url-base='cliente/'">
 
-
-				<!-- <form method="POST" action="cliente/">  
-						<input type="hidden" name="_method" value="DELETE"/> -->
-
 				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">Confirmação de Exclusão</h4>
+					<div class="conf">
+						<h7 class="moda-t">CONFIRMAÇÃO DE EXCLUSÃO</h7>
 					</div>
 					<div class="modal-body">
-						<span>Tem certeza que deseja apagar o Cliente?</span>
+						<span>TEM CERTEZA QUE DESEJA APAGAR O CLIENTE?</span>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-						<button type="submit" class="btn btn-primary">Excluir</button>
+					<div class="m-footer">
+						<button type="button" class="btn btn-primary btn-sm"
+							data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary btn-sm">Excluir</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-
-	<script src="../_js/jquery-3.5.0.min.js"></script>
-	<script src="../_js/popper.min.js"></script>
-	<script src="../_js/bootstrap.min.js"></script>
-	<script src="../_js/sistema-hf.js"></script>
 </body>
 </html>
 

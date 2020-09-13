@@ -1,0 +1,37 @@
+/*---------------------------------------
+  ------- CONFIGURAÇÕES ALERT ---------
+  ---------------------------------------*/
+  
+  .alert-primary {
+    width: 1010px;
+    color: #1471b8;
+    background-color: #1570b512;
+    border-color: #176eb133;
+    margin: 0px 20px 0px 0px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.alert-secundary {
+    color: #b81423b3;
+    background-color: #b5151524;
+    border-color: #b1171733;
+    margin: 0px 20px 0px 120px;
+}
+
+.alert-dismissible .close {
+    padding: 10px;
+}
+
+.close {
+    font-size: 1.3rem;
+    opacity: .2;
+}
+
+.has-error {
+    color: #d62f13b8;
+    background-color: #b5151524;
+    border-radius: .25rem;
+}
+
